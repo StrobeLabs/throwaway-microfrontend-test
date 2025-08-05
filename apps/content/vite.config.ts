@@ -17,7 +17,8 @@ export default defineConfig({
       manifest: true,
       filename: 'remoteEntry.js',
       exposes: {
-        './landing': './src/landing.tsx',
+        './landing': './src/landing-spa.tsx',
+        './profile': './src/profile-spa.tsx',
       },
       shared: {
         react: {

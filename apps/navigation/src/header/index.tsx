@@ -17,34 +17,8 @@ function Header(): React.JSX.Element {
             src="/abstract-geometric-logo.png"
             width="32"
           />
-          <span className="remote:text-xl remote:font-bold">Company</span>
+          <span className="remote:text-xl remote:font-bold">Perp City</span>
         </a>
-        <nav className="remote:hidden remote:sm:flex remote:gap-6 ">
-          <a
-            className="remote:text-sm remote:font-medium remote:hover:text-primary"
-            href="#features"
-          >
-            Features
-          </a>
-          <a
-            className="remote:text-sm remote:font-medium remote:hover:text-primary"
-            href="#testimonials"
-          >
-            Testimonials
-          </a>
-          <a
-            className="remote:text-sm remote:font-medium remote:hover:text-primary"
-            href="#pricing"
-          >
-            Pricing
-          </a>
-          <a
-            className="remote:text-sm remote:font-medium remote:hover:text-primary"
-            href="#about"
-          >
-            About
-          </a>
-        </nav>
         <MobileMenuButton />
       </div>
     </header>

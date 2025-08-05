@@ -5,6 +5,18 @@ export function MobileMenu({
   open: boolean;
   onClose: () => void;
 }): React.JSX.Element {
+  const handleConnectWallet = () => {
+    // TODO: Implement wallet connection logic
+    console.log('Connect wallet clicked');
+    onClose();
+  };
+
+  const handleProfile = () => {
+    // Use window.location.href to properly trigger single-spa routing
+    window.location.href = '/profile';
+    onClose();
+  };
+
   return (
     <div
       className={`remote:fixed remote:top-0 remote:inset-0 remote:z-50 remote:bg-background/80 remote:backdrop-blur-sm remote:md:hidden${open ? '' : ' remote:hidden'}`}
@@ -24,7 +36,7 @@ export function MobileMenu({
               src="/abstract-geometric-logo.png"
               width="32"
             />
-            <span className="remote:text-xl remote:font-bold">Company</span>
+            <span className="remote:text-xl remote:font-bold">Perp City</span>
           </a>
           <button
             className="remote:inline-flex remote:h-9 remote:items-center remote:justify-center remote:rounded-md remote:p-2 remote:text-muted-foreground remote:hover:bg-muted remote:hover:text-foreground"
@@ -51,48 +63,20 @@ export function MobileMenu({
           </button>
         </div>
         <nav className="remote:mt-6 remote:flex remote:flex-col remote:gap-4">
-          <a
-            className="remote:text-base remote:font-medium remote:hover:text-primary"
-            href="#features"
-            onClick={onClose}
-          >
-            Features
-          </a>
-          <a
-            className="remote:text-base remote:font-medium remote:hover:text-primary"
-            href="#testimonials"
-            onClick={onClose}
-          >
-            Testimonials
-          </a>
-          <a
-            className="remote:text-base remote:font-medium remote:hover:text-primary"
-            href="#pricing"
-            onClick={onClose}
-          >
-            Pricing
-          </a>
-          <a
-            className="remote:text-base remote:font-medium remote:hover:text-primary"
-            href="#about"
-            onClick={onClose}
-          >
-            About
-          </a>
           <div className="remote:mt-4 remote:flex remote:flex-col remote:gap-2">
             <button
               className="remote:inline-flex remote:h-10 remote:w-full remote:items-center remote:justify-center remote:rounded-md remote:border remote:border-input remote:bg-background remote:px-4 remote:py-2 remote:text-sm remote:font-medium remote:shadow-sm remote:transition-colors remote:hover:bg-muted"
-              onClick={onClose}
+              onClick={handleConnectWallet}
               type="button"
             >
-              Log in
+              Connect Wallet
             </button>
             <button
               className="remote:inline-flex remote:h-10 remote:w-full remote:items-center remote:justify-center remote:rounded-md remote:bg-primary remote:px-4 remote:py-2 remote:text-sm remote:font-medium remote:text-primary-foreground remote:shadow remote:transition-colors remote:hover:bg-primary/90"
-              onClick={onClose}
+              onClick={handleProfile}
               type="button"
             >
-              Sign up
+              Profile
             </button>
           </div>
         </nav>

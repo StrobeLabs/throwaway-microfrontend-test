@@ -1,23 +1,21 @@
 import { defineConfig, type Plugin } from 'vite';
 import { federation } from '@module-federation/vite';
-import tailwindcss from '@tailwindcss/vite';
 import { microfrontends } from '@vercel/microfrontends/experimental/vite';
 import react from '@vitejs/plugin-react';
 
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [
-    tailwindcss(),
     microfrontends({
-      basePath: '/_navigation',
+      basePath: '/_market2',
     }) as Plugin,
     react(),
     federation({
-      name: 'navigation',
+      name: 'market2',
       manifest: true,
       filename: 'remoteEntry.js',
       exposes: {
-        './header': './src/header/index.tsx',
+        './market': './src/market-spa.tsx',
       },
       shared: {
         react: {
@@ -38,4 +36,4 @@ export default defineConfig({
   build: {
     target: 'chrome89',
   },
-});
+}); 

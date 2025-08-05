@@ -19,6 +19,20 @@
           "paths": ["/_navigation/:path*"]
         }
       ]
+    },
+    "microfrontends-single-spa-module-federation-market1": {
+      "routing": [
+        {
+          "paths": ["/_market1/:path*"]
+        }
+      ]
+    },
+    "microfrontends-single-spa-module-federation-market2": {
+      "routing": [
+        {
+          "paths": ["/_market2/:path*"]
+        }
+      ]
     }
   }
 }

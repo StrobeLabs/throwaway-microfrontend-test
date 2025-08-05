@@ -4,20 +4,32 @@ import { MobileMenu } from './mobile-menu';
 export function MobileMenuButton(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleConnectWallet = () => {
+    // TODO: Implement wallet connection logic
+    console.log('Connect wallet clicked');
+  };
+
+  const handleProfile = () => {
+    // Use window.location.href to properly trigger single-spa routing
+    window.location.href = '/profile';
+  };
+
   return (
     <>
       <div className="remote:hidden remote:sm:flex remote:gap-4">
         <button
           className="remote:inline-flex remote:h-9 remote:items-center remote:justify-center remote:rounded-md remote:border remote:border-input remote:bg-background remote:px-4 remote:py-2 remote:text-sm remote:font-medium remote:shadow-sm remote:transition-colors remote:hover:bg-muted"
           type="button"
+          onClick={handleConnectWallet}
         >
-          Log in
+          Connect Wallet
         </button>
         <button
           className="remote:inline-flex remote:h-9 remote:items-center remote:justify-center remote:rounded-md remote:bg-primary remote:px-4 remote:py-2 remote:text-sm remote:font-medium remote:text-primary-foreground remote:shadow remote:transition-colors remote:hover:bg-primary/90"
           type="button"
+          onClick={handleProfile}
         >
-          Sign up
+          Profile
         </button>
       </div>
       <div className="remote:flex remote:sm:hidden">

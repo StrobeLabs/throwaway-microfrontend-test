@@ -1,26 +1,21 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "globalPassThroughEnv": ["MFE_DEBUG"],
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
+    "lint": {},
     "dev": {
-      "dependsOn": ["^build"],
       "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "dependsOn": ["^build"]
-    },
-    "start": {
-      "cache": false,
-      "dependsOn": ["^build"],
       "persistent": true
     },
     "typecheck": {
       "dependsOn": ["^build"]
+    },
+    "checks": {
+      "dependsOn": ["lint", "typecheck"]
     }
   }
 }
