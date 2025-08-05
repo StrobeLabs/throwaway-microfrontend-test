@@ -11,40 +11,14 @@
         {
           "paths": ["/_content/:path*"]
         }
-      ],
-      "development": {
-        "fallback": "microfrontends-single-spa-module-federation-root.vercel.app"
-      }
+      ]
     },
     "microfrontends-single-spa-module-federation-navigation": {
       "routing": [
         {
           "paths": ["/_navigation/:path*"]
         }
-      ],
-      "development": {
-        "fallback": "microfrontends-single-spa-module-federation-root.vercel.app"
-      }
-    },
-    "microfrontends-single-spa-module-federation-market1": {
-      "routing": [
-        {
-          "paths": ["/_market1/:path*"]
-        }
-      ],
-      "development": {
-        "fallback": "microfrontends-single-spa-module-federation-root.vercel.app"
-      }
-    },
-    "microfrontends-single-spa-module-federation-market2": {
-      "routing": [
-        {
-          "paths": ["/_market2/:path*"]
-        }
-      ],
-      "development": {
-        "fallback": "microfrontends-single-spa-module-federation-root.vercel.app"
-      }
+      ]
     }
   }
 }
