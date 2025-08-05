@@ -27,7 +27,11 @@ declare global {
   interface Window {
     location: Location;
     history: History;
+    addEventListener(type: string, listener: EventListener): void;
   }
+  
+  var window: Window;
+  var navigator: Navigator;
 }
 
 export {};
