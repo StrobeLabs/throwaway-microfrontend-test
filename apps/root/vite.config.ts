@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
+  base: '/',
   plugins: [
     tailwindcss(),
     microfrontends() as Plugin,
@@ -17,22 +18,30 @@ export default defineConfig({
         navigation: {
           type: 'module',
           name: 'navigation',
-          entry: '/_navigation/remoteEntry.js',
+          entry: process.env.NODE_ENV === 'production' 
+            ? `${process.env.VERCEL_URL || 'https://your-app.vercel.app'}/_navigation/remoteEntry.js`
+            : '/_navigation/remoteEntry.js',
         },
         content: {
           type: 'module',
           name: 'content',
-          entry: '/_content/remoteEntry.js',
+          entry: process.env.NODE_ENV === 'production'
+            ? `${process.env.VERCEL_URL || 'https://your-app.vercel.app'}/_content/remoteEntry.js`
+            : '/_content/remoteEntry.js',
         },
         market1: {
           type: 'module',
           name: 'market1',
-          entry: '/_market1/remoteEntry.js',
+          entry: process.env.NODE_ENV === 'production'
+            ? `${process.env.VERCEL_URL || 'https://your-app.vercel.app'}/_market1/remoteEntry.js`
+            : '/_market1/remoteEntry.js',
         },
         market2: {
           type: 'module',
           name: 'market2',
-          entry: '/_market2/remoteEntry.js',
+          entry: process.env.NODE_ENV === 'production'
+            ? `${process.env.VERCEL_URL || 'https://your-app.vercel.app'}/_market2/remoteEntry.js`
+            : '/_market2/remoteEntry.js',
         },
       },
       shared: {
