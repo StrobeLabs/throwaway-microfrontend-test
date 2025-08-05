@@ -7,6 +7,9 @@ import react from '@vitejs/plugin-react';
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
   base: '/',
+  build: {
+    target: 'chrome89',
+  },
   plugins: [
     tailwindcss(),
     microfrontends() as Plugin,
@@ -14,6 +17,7 @@ export default defineConfig({
     federation({
       name: 'root',
       manifest: true,
+      filename: 'remoteEntry.js',
       remotes: {
         navigation: {
           type: 'module',
@@ -44,7 +48,4 @@ export default defineConfig({
       },
     }) as Plugin[],
   ],
-  build: {
-    target: 'chrome89',
-  },
 });
